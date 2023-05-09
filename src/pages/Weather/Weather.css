@@ -1,0 +1,46 @@
+.weather {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+}
+
+.weather nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.weather h1 {
+  font-size: 35px;
+}
+
+.contInfo {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .weather nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+  }
+
+  .weather h1 {
+    font-size: 45px;
+  }
+
+  .contInfo {
+    align-items: flex-start;
+  }
+
+}

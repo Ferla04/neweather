@@ -1,8 +1,9 @@
+import { Home, Weather } from './pages'
 
 function App () {
   return (
     <>
-      Hola Mundo
+      <Weather />
     </>
   )
 }

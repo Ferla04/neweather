@@ -21,14 +21,14 @@
 }
 
 .search article,
-.btnSearch1 {
+.btnHome {
   position: relative;
 }
 
 .search article::before,
 .search article::after,
-.btnSearch1::before,
-.btnSearch1::after {
+.btnHome::after,
+.btnHome::before {
   background: #1B956F;
   content: "";
   position: absolute;
@@ -58,6 +58,8 @@
   cursor: pointer;
   font-family: 'Share Tech Mono', monospace;
   font-weight: 900;
+  transition: .5s ease;
+  transition-property: background-color, color;
 }
 
 .search button::after {

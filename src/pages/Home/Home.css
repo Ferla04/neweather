@@ -7,7 +7,7 @@
   gap: 10px;
 }
 
-.home p {
+.home>p {
   color: var(--ft-text-color);
   font-size: 20px;
   margin-bottom: 20px;

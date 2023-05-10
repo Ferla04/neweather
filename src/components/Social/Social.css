@@ -1,0 +1,135 @@
+aside {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  font-family: 'Share Tech Mono', monospace;
+  gap: 20px;
+  position: fixed;
+  right: 20px;
+  user-select: none;
+}
+
+.contact {
+  background-color: var(--button-color);
+  border-radius: 5px;
+  box-sizing: content-box;
+  color: var(--bg-dark-color);
+  padding: 5px 12px;
+  position: relative;
+  width: 12px;
+  word-wrap: break-word;
+  z-index: 1;
+}
+
+.contact::after,
+.contact::before,
+.contact h3::before,
+.contact h3::after {
+  content: "";
+  position: absolute;
+}
+
+.contact::before,
+.contact h3::before {
+  background-color: var(--ft-title-color);
+}
+
+.contact::after,
+.contact h3::after {
+  background-color: var(--sub-title-icons);
+}
+
+.contact::before {
+  top: 6px;
+  height: 12px;
+  right: -6px;
+  width: 12px;
+}
+
+.contact::after {
+  top: -4px;
+  height: 10px;
+  right: 5px;
+  width: 10px;
+}
+
+.contact h3::before {
+  bottom: -10px;
+  height: 11px;
+  left: 3px;
+  width: 11px;
+}
+
+.contact h3::after {
+  bottom: -1px;
+  height: 13px;
+  left: -5px;
+  width: 13px;
+
+}
+
+/* component */
+.contactItems {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  /* background-color: red; */
+  transform: translateX(25px);
+  visibility: hidden;
+  transition: visibility .3s ease, transform .5s ease;
+}
+
+.contactItems article {
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-right: 20px;
+  text-align: center;
+  width: 65px;
+}
+
+.contactItems article p {
+  color: var(--button-color);
+  font-size: 20px;
+}
+
+.contactItems article a {
+  color: var(--sub-title-icons);
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 25px;
+  margin: 0 4px;
+}
+
+aside:hover .contactItems {
+  visibility: visible;
+  transform: translateX(-35px);
+}
+
+@media (max-width: 768px) {
+  aside {
+    flex-direction: row;
+    bottom: 20px;
+  }
+
+  .contact {
+    width: auto;
+  }
+
+  .contactItems {
+    flex-direction: row;
+    gap: 15px;
+    transform: translateX(-160px);
+  }
+
+  .contactItems article {
+    padding-right: 0;
+  }
+
+  aside:hover .contactItems {
+    transform: translateX(-170px);
+  }
+}

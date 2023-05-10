@@ -1,9 +1,9 @@
-import { Home, Weather } from './pages'
+import { Home/*, Weather */ } from './pages'
 
 function App () {
   return (
     <>
-      <Weather />
+      <Home />
     </>
   )
 }

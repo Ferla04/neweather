@@ -2,7 +2,7 @@ import './Search.css'
 
 const buttons = {
   Home: {
-    text: 'Buscar',
+    text: 'Search',
     direction: 'column'
   },
   Weather: {
@@ -23,7 +23,7 @@ export function Search ({ typeButton = 'Home' }) {
         <input
           type='text'
           autoComplete='off'
-          placeholder='Buscar sitio...'
+          placeholder='Search for site...'
           required
         />
       </article>

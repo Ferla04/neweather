@@ -12,9 +12,9 @@ export function Autocomplete () {
   return (
     <section className='autocomplete'>
       {
-        autocomplete?.map(({ id, city, country }) => (
-          <li key={id} className='result' onClick={() => handleClick(`${country},${city}`)}>
-            <p>{city}, {country}</p>
+        autocomplete?.map(({ id, city, country, region }) => (
+          <li key={id} className='result' onClick={() => handleClick(`${country},${city},${region}`)}>
+            <p>{city}, {region}, {country}</p>
           </li>
         ))
       }

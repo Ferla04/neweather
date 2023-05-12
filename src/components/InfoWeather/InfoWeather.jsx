@@ -6,7 +6,7 @@ import './InfoWeather.css'
 
 export function InfoWeather () {
   const { data, loading, error } = useWeather()
-  const { conditionText, temperature, country, locationName, humidity, windSpeed, feelsLike, icon } = data
+  const { conditionText, temperature, country, region, locationName, humidity, windSpeed, feelsLike, icon } = data
 
   if (loading) return <Spinner />
   if (error) return <ErrorMessage problem={error} />
@@ -20,7 +20,7 @@ export function InfoWeather () {
         <img src={iconPixel} alt='weather' />
         <span>{conditionText}</span>
       </div>
-      <p>{`${country}, ${locationName}`}</p>
+      <p>{`${country}, ${region}, ${locationName}`}</p>
       <div>
         <p>Humidity: <span>{humidity}%</span></p>
         <p>WindSpeed: <span>{windSpeed}km/h</span></p>

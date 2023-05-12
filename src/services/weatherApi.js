@@ -19,6 +19,7 @@ export const searchWeather = async ({ query }) => {
       icon: current.condition.icon,
       locationName: location.name,
       temperature: current.temp_c,
+      region: location.region,
       windSpeed: current.wind_kph,
       lng: location.lon,
       lat: location.lat
@@ -36,8 +37,8 @@ export const searchAutocomplete = async ({ query }) => {
     const data = await response.json()
     const newData = data.slice(0, 5)
 
-    return newData?.map(({ id, name, country }) => ({
-      id, city: name, country
+    return newData?.map(({ id, name, country, region }) => ({
+      id, city: name, country, region
     }))
   } catch (error) {
     console.log(error)

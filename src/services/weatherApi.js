@@ -19,7 +19,9 @@ export const searchWeather = async ({ query }) => {
       icon: current.condition.icon,
       locationName: location.name,
       temperature: current.temp_c,
-      windSpeed: current.wind_kph
+      windSpeed: current.wind_kph,
+      lng: location.lon,
+      lat: location.lat
     }
   } catch (error) {
     throw new Error('Error searching site')

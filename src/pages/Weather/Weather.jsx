@@ -1,3 +1,4 @@
+import { InfoWeather } from '../../components'
 import './Weather.css'
 
 export function Weather () {
@@ -7,7 +8,9 @@ export function Weather () {
         <nav>
           <h1 className='title' translate='no'>NEWEATHER</h1>
         </nav>
-        <main className='contInfo' />
+        <main className='contInfo'>
+          <InfoWeather />
+        </main>
       </div>
     </>
   )

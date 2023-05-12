@@ -1,7 +1,7 @@
 import { Search, Social } from '../../components'
 import './Home.css'
 
-export function Home () {
+export function Home ({ changePage }) {
   return (
     <div className='home'>
       <h1 className='title' translate='no'>NEWEATHER</h1>

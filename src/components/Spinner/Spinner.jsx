@@ -1,5 +1,5 @@
 import './Spinner.css'
 
 export function Spinner () {
-  return <div className='loader' />
+  return <section className='cont-loader'><div className='loader' /></section>
 }

@@ -6,9 +6,9 @@ export const searchWeather = async ({ query }) => {
   try {
     const response = await fetch(`${API_URL}current.json?q=${query}`, OPTIONS_WEATHER_API)
     const data = await response.json()
-    const error = data?.error?.message ?? null
+    const error = data?.error ?? null
 
-    if (error) return { error }
+    if (error) throw new Error(error)
 
     const { current, location } = data
     return {
@@ -22,8 +22,7 @@ export const searchWeather = async ({ query }) => {
       windSpeed: current.wind_kph
     }
   } catch (error) {
-    console.log(error)
-    throw new Error('Error searching weather')
+    throw new Error('Error searching site')
   }
 }
 

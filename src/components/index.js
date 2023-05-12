@@ -1,4 +1,5 @@
 export * from './Autocomplete/Autocomplete'
+export * from './Error/ErrorMessage'
 export * from './InfoWeather/InfoWeather'
 export * from './Search/Search'
 export * from './Social/Social'

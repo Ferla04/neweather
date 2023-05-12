@@ -3,7 +3,7 @@ import { changePage, changeSearch, getResults, onError, onListAutocomplete, onLo
 import { searchAutocomplete, searchWeather } from '../services'
 
 export const useWeather = () => {
-  const { search, firstRender, autocomplete, loading, data } = useSelector(state => state.weatherStore)
+  const { search, firstRender, autocomplete, loading, data, error } = useSelector(state => state.weatherStore)
   const dispatch = useDispatch()
 
   const onChangePage = () => {
@@ -39,6 +39,7 @@ export const useWeather = () => {
     autocomplete,
     search,
     loading,
+    error,
 
     //* Funcs
     onAutocomplete,

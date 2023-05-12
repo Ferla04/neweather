@@ -6,7 +6,7 @@ export const weatherSlice = createSlice({
     search: '',
     firstRender: true,
     loading: false,
-    error: false,
+    error: null,
     data: {},
     autocomplete: []
   },
@@ -25,11 +25,10 @@ export const weatherSlice = createSlice({
     },
     onError: (state, { payload }) => {
       state.loading = false
-      state.payload = payload.error
+      state.error = payload.error
     },
     getResults: (state, { payload }) => {
       state.loading = false
-      state.error = null
       state.autocomplete = []
       state.search = ''
       state.data = payload.data

@@ -1,0 +1,16 @@
+.error {
+  display: inline-block;
+  backdrop-filter: blur(2px);
+  background-color: rgba(236, 236, 236, 0.199);
+  font-size: 25px;
+  max-width: 50%;
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.error>p {
+  background: linear-gradient(90deg, var(--sub-title-icons), var(--button-color));
+  color: transparent;
+  font-family: 'Share Tech Mono', monospace;
+  -webkit-background-clip: text;
+}

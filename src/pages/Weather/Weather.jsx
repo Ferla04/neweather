@@ -1,4 +1,4 @@
-import { InfoWeather, Search } from '../../components'
+import { InfoWeather, MapView, Search } from '../../components'
 import './Weather.css'
 
 export function Weather () {
@@ -13,6 +13,7 @@ export function Weather () {
           <InfoWeather />
         </main>
       </div>
+      <MapView />
     </>
   )
 }

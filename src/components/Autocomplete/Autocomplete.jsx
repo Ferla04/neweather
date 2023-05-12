@@ -14,7 +14,7 @@ export function Autocomplete () {
       {
         autocomplete?.map(({ id, city, country }) => (
           <li key={id} className='result' onClick={() => handleClick(`${country},${city}`)}>
-            <p>{country}, {city}</p>
+            <p>{city}, {country}</p>
           </li>
         ))
       }

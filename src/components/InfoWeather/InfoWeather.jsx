@@ -1,9 +1,12 @@
 import { useWeather } from '../../hooks'
+import { Spinner } from '../Spinner/Spinner'
 import './InfoWeather.css'
 
 export function InfoWeather () {
-  const { data } = useWeather()
+  const { data, loading } = useWeather()
   const { conditionText, temperature, country, locationName, humidity, windSpeed, feelsLike, icon } = data
+
+  if (loading) return <Spinner />
 
   return (
     <section className='info'>

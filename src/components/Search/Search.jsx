@@ -16,7 +16,7 @@ const buttons = {
 }
 
 export function Search ({ typeButton = 'Home' }) {
-  const { onChangePage, onAutocomplete, getWeather, search, updateSearch } = useWeather()
+  const { onChangePage, onAutocomplete, getWeather, search, updateSearch, loading } = useWeather()
   const { text, direction } = buttons[typeButton]
 
   const onSubmit = (event) => {
@@ -29,7 +29,7 @@ export function Search ({ typeButton = 'Home' }) {
   const debouncedGetMovies = useCallback(
     debounce(query => {
       onAutocomplete({ query })
-    }, 300)
+    }, 200)
     , []
   )
 
@@ -53,11 +53,17 @@ export function Search ({ typeButton = 'Home' }) {
           value={search}
           required
           onChange={handleChange}
+          disabled={loading}
         />
         <Autocomplete />
       </article>
 
-      <button className={`btn${typeButton}`}> {text} </button>
+      <button
+        className={`btn${typeButton}`}
+        disabled={loading}
+      >
+        {text}
+      </button>
     </form>
   )
 }

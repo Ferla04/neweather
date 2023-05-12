@@ -29,7 +29,7 @@
 .search article::after,
 .btnHome::after,
 .btnHome::before {
-  background: #1B956F;
+  background: var(--button-color);
   content: "";
   position: absolute;
 }
@@ -39,7 +39,7 @@
   left: 5px;
   top: -5px;
   width: 10px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .search article::after {
@@ -47,6 +47,7 @@
   height: 15px;
   right: -3px;
   width: 15px;
+  z-index: 2;
 }
 
 .search button {

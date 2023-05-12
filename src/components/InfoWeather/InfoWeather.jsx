@@ -1,8 +1,9 @@
-import { mockWeatherNew } from '../../mock/weatherApi'
+import { useWeather } from '../../hooks'
 import './InfoWeather.css'
 
 export function InfoWeather () {
-  const { conditionText, temperature, country, locationName, humidity, windSpeed, feelsLike, icon } = mockWeatherNew
+  const { data } = useWeather()
+  const { conditionText, temperature, country, locationName, humidity, windSpeed, feelsLike, icon } = data
 
   return (
     <section className='info'>

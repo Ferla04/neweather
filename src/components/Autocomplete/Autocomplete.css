@@ -1,0 +1,36 @@
+.autocomplete {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 4px 4px 0px 1px var(--ft-title-color);
+}
+
+.list-results {
+  margin-top: 10px;
+  width: 300px;
+  box-shadow: 4px 4px 0px 1px var(--button-color);
+  position: absolute;
+  z-index: 100;
+}
+
+.result {
+  border-top: 1px solid #1c213337;
+  list-style: none;
+  background-color: #fff;
+  height: 28px;
+  padding: 5px 15px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.result p {
+  color: black;
+  font-size: 17px;
+  line-height: 22px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.result:hover {
+  list-style: none;
+  background-color: #ececec;
+}

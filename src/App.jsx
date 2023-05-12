@@ -3,6 +3,7 @@ import { useWeather } from './hooks'
 
 function App () {
   const { firstRender } = useWeather()
+
   return (
     <>
       {

@@ -1,4 +1,7 @@
+import debounce from 'just-debounce-it'
+import { useCallback } from 'react'
 import { useWeather } from '../../hooks'
+import { Autocomplete } from '../Autocomplete/Autocomplete'
 import './Search.css'
 
 const buttons = {
@@ -13,12 +16,26 @@ const buttons = {
 }
 
 export function Search ({ typeButton = 'Home' }) {
-  const { onChangePage } = useWeather()
+  const { onChangePage, onAutocomplete, getWeather, search, updateSearch } = useWeather()
   const { text, direction } = buttons[typeButton]
 
   const onSubmit = (event) => {
     event.preventDefault()
     if (typeButton === 'Home') onChangePage()
+    const { query } = Object.fromEntries(new window.FormData(event.target))
+    getWeather({ query })
+  }
+
+  const debouncedGetMovies = useCallback(
+    debounce(query => {
+      onAutocomplete({ query })
+    }, 300)
+    , []
+  )
+
+  const handleChange = ({ target }) => {
+    updateSearch({ search: target.value })
+    debouncedGetMovies(target.value)
   }
 
   return (
@@ -32,8 +49,12 @@ export function Search ({ typeButton = 'Home' }) {
           type='text'
           autoComplete='off'
           placeholder='Search for site...'
-          // required
+          name='query'
+          value={search}
+          required
+          onChange={handleChange}
         />
+        <Autocomplete />
       </article>
 
       <button className={`btn${typeButton}`}> {text} </button>

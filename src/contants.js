@@ -1,9 +1,10 @@
+export const API_URL = 'https://weatherapi-com.p.rapidapi.com/'
+export const ICON_URL = 'https://res.cloudinary.com/dehmscseb/image/upload/v1653947327'
+
 export const DEVS = [
   { name: 'Fer', github: 'https://github.com/Ferla04', linkedin: 'https://www.linkedin.com/in/Ferla04/' },
   { name: 'Juan', github: 'https://github.com/juanerq', linkedin: 'https://www.linkedin.com/in/juanerq/' }
 ]
-
-export const API_URL = 'https://weatherapi-com.p.rapidapi.com/'
 
 export const OPTIONS_WEATHER_API = {
   method: 'GET',

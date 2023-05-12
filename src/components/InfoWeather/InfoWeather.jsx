@@ -1,4 +1,5 @@
 import { useWeather } from '../../hooks'
+import { getImgInfoFromUrl } from '../../utils'
 import { ErrorMessage } from '../Error/ErrorMessage'
 import { Spinner } from '../Spinner/Spinner'
 import './InfoWeather.css'
@@ -10,11 +11,13 @@ export function InfoWeather () {
   if (loading) return <Spinner />
   if (error) return <ErrorMessage problem={error} />
 
+  const iconPixel = getImgInfoFromUrl(icon)
+
   return (
     <section className='info'>
       <div className='temperature'>
         <span>{`${temperature}°`}</span>
-        <img src={icon} alt='weather' />
+        <img src={iconPixel} alt='weather' />
         <span>{conditionText}</span>
       </div>
       <p>{`${country}, ${locationName}`}</p>

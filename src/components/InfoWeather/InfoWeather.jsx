@@ -20,7 +20,7 @@ export function InfoWeather () {
         <img src={iconPixel} alt='weather' />
         <span>{conditionText}</span>
       </div>
-      <p>{locationName}, {region ? `${region},` : ''} {country}</p>
+      <p>{country}, {region ? `${region},` : ''} {locationName}</p>
       <div>
         <p>Humidity: <span>{humidity}%</span></p>
         <p>WindSpeed: <span>{windSpeed}km/h</span></p>

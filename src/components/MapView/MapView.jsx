@@ -10,7 +10,7 @@ const ZOOM_LEVEL = 7
 export function MapView () {
   const { data } = useWeather()
 
-  if (data?.lat) {
+  if (data?.lat !== undefined) {
     location = {
       lat: data.lat,
       lng: data.lng
